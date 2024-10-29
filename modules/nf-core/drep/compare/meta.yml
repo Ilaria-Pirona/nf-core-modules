@@ -1,0 +1,73 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/meta-schema.json
+name: "drep_compare"
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - sort
+  - example
+  - genomics
+tools:
+  - "drep":
+      ## TODO nf-core: Add a description and other details for the software below
+      description: "De-replication of microbial genomes assembled from multiple samples"
+      homepage: "https://drep.readthedocs.io/en/latest/"
+      documentation: "https://drep.readthedocs.io/en/latest/"
+      tool_dev_url: "https://github.com/MrOlm/drep"
+      doi: ""
+      licence: ['MIT']
+      identifier: biotools:drep
+
+## TODO nf-core: Add a description of all of the variables used as input
+input:
+
+  ## TODO nf-core: Delete / customise this example input
+    - fasta:
+        type: file
+        description: Contgs files in FASTA format
+        pattern: "*.{fasta,fa}"
+        ontologies:
+          - edam: "http://edamontology.org/format_25722"
+          - edam: "http://edamontology.org/format_2573"
+          - edam: "http://edamontology.org/format_3462"
+          
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+
+- data_table:
+
+    - "drep_output/data_table/*.csv":
+        type: file
+        description: Data table with statistics on the run
+        pattern: "*.csv"
+        ontologies:
+          - edam: "http://edamontology.org/format_3752"
+  
+  - figures:
+
+    - "drep_output/figures/*.pdf":
+        type: file
+        description: Figures generated from the genome comparison
+        pattern: "*.pdf"
+        ontologies:
+          - edam: "http://edamontology.org/format_3508"
+
+  - log_file:
+
+    - "drep_output/log/*.log":
+        type: file
+        description: Log file with details of the run
+        pattern: "*.log"
+          
+          
+  - versions:
+    - "versions.yml":
+        type: file
+        description: File containing software versions
+        pattern: "versions.yml"
+
+authors:
+  - "@ilariapirona"
+maintainers:
+  - "@ilariapirona"

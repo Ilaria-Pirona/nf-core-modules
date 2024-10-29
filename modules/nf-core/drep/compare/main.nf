@@ -38,7 +38,7 @@ process DREP_COMPARE {
 
     output:
     // TODO nf-core: Named file extensions MUST be emitted for ALL output channels
-    tuple path("data_table/*.csv"), emit: data_table
+    tuple path("data_tables/*.csv"), emit: data_tables
     tuple path("figures/*.pdf"), emit: figures
     tuple path("log/*.log"), emit: log_file
     
@@ -64,7 +64,7 @@ process DREP_COMPARE {
     dRep \\
     compare \\
     . \\
-    -g ${fasta} \\  
+    -g ${fasta} \\
     -p ${cpu} \\
     ${args}
 
@@ -81,8 +81,8 @@ process DREP_COMPARE {
     //               Simple example: https://github.com/nf-core/modules/blob/818474a292b4860ae8ff88e149fbcda68814114d/modules/nf-core/bcftools/annotate/main.nf#L47-L63
     //               Complex example: https://github.com/nf-core/modules/blob/818474a292b4860ae8ff88e149fbcda68814114d/modules/nf-core/bedtools/split/main.nf#L38-L54
     """
-    mkdir -p data_table
-    touch data_table/test{0001..0003}.csv
+    mkdir -p data_tables
+    touch data_tables/test{0001..0003}.csv
     mkdir -p figures
     touch figures/test{0001..0003}.pdf
     mkdir -p log

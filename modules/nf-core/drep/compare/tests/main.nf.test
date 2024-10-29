@@ -25,11 +25,8 @@ nextflow_process {
                 // TODO nf-core: define inputs of the process here. Example:
                 
                 input[0] = [
-                    //file(params.modules_testdata_base_path + 'genomics/prokaryotes/haemophilus_influenzae/genome/genome.fna.gz', checkIfExists: true),
-                    //file(params.modules_testdata_base_path + 'genomics/prokaryotes/bacteroides_fragilis/illumina/fasta/test1.contigs.fa.gz', checkIfExists: true)
-                    [file('/Users/ilariapirona/Desktop/nf-core-modules/modules/nf-core/drep/compare/tests/10037_SAMEA2241279.fa', checkIfExists: true),
-                    file('/Users/ilariapirona/Desktop/nf-core-modules/modules/nf-core/drep/compare/tests/10036_SAMEA2241278.fa', checkIfExists: true),
-                    file('/Users/ilariapirona/Desktop/nf-core-modules/modules/nf-core/drep/compare/tests/10035_SAMEA2241277.fa', checkIfExists: true)]
+                    [file(params.modules_testdata_base_path + 'genomics/prokaryotes/haemophilus_influenzae/genome/genome.fna.gz', checkIfExists: true),
+                    file(params.modules_testdata_base_path + 'genomics/prokaryotes/bacteroides_fragilis/illumina/fasta/test1.contigs.fa.gz', checkIfExists: true)]
 
                 ]
                 """

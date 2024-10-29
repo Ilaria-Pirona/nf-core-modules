@@ -35,9 +35,9 @@ input:
 ## TODO nf-core: Add a description of all of the variables used as output
 output:
 
-- data_table:
+- data_tables:
 
-    - "drep_output/data_table/*.csv":
+    - "drep_output/data_tables/*.csv":
         type: file
         description: Data table with statistics on the run
         pattern: "*.csv"
